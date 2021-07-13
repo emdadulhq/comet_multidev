@@ -62,6 +62,12 @@ Route::get('settings/social', 'App\Http\Controllers\SettingsController@socialInd
 Route::post('settings/social-update', 'App\Http\Controllers\SettingsController@socialUpdate')->name('social.update');
 
 
+// Comment Management
+Route::post('blog-post-comments', [App\Http\Controllers\CommentController::class, 'postComment'])->name('blog.post.comment');
+
+// Comment Management
+Route::post('blog-post-comments-reply', [App\Http\Controllers\CommentController::class, 'commentReply'])->name('blog.post.comment.reply');
+
 Route::group(['namespace'=>'App\Http\Controllers', 'prefix'=>'home'], function(){
     Route::get('slider', 'HomepageController@index')->name('slider.index');
     Route::post('slider/store', 'HomepageController@sliderStore')->name('slider.store');

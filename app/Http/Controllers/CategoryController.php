@@ -124,4 +124,7 @@ class CategoryController extends Controller
         $data -> update();
         return redirect()-> route('posts-category.index')->with('success', 'Category Published successfully');
     }
+
+
+
 }
